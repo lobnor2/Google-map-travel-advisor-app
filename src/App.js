@@ -15,7 +15,11 @@ function App() {
       <Grid
         container
         spacing={3}
-        style={{ width: "100%", border: "1px solid red" }}
+        style={{
+          width: "100%",
+          border: "1px solid red",
+          // marginTop: "5px",
+        }}
       >
         <Grid item xs={12} md={4} style={{ border: "1px solid green" }}>
           <List />
