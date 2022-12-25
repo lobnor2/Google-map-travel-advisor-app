@@ -12,23 +12,23 @@ const Header = () => {
         <Typography variant="h5" className={classes.title}>
           Travel Advisor
         </Typography>
-      </Toolbar>
-      <Box display="flex">
-        <Typography variant="h6" className={classes.title}>
-          Explore New Places
-        </Typography>
-        {/* <Autocomplete> */}
-        <div className={classes.search}>
-          <div className={classes.searchIcon}>
-            <SearchIcon />
+        <Box display="flex">
+          <Typography variant="h6" className={classes.title}>
+            Explore New Places
+          </Typography>
+          {/* <Autocomplete> */}
+          <div className={classes.search}>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="Search..."
+              classes={{ root: classes.inputRoot, input: classes.inputInput }}
+            />
           </div>
-          <InputBase
-            placeholder="Search..."
-            classes={{ root: classes.inputRoot, input: classes.inputInput }}
-          />
-        </div>
-        {/* </Autocomplete> */}
-      </Box>
+          {/* </Autocomplete> */}
+        </Box>
+      </Toolbar>
     </AppBar>
   );
 };
