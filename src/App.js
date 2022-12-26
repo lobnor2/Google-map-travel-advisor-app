@@ -21,7 +21,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    getPlacesData(bounds.sw, bounds.ne).then((data) => {
+    getPlacesData().then((data) => {
       setPlaces(data);
     });
   }, [coordinates, bounds]);
@@ -41,7 +41,7 @@ function App() {
         }}
       >
         <Grid item xs={12} md={4} style={{ border: "1px solid green" }}>
-          <List places={places} />
+          <List />
         </Grid>
         {/* take full 12 on small devices and 8 spaces for medium and larger devices */}
         <Grid item xs={12} md={8} style={{ border: "1px solid green" }}>
