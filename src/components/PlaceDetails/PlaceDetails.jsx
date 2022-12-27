@@ -33,10 +33,18 @@ const PlaceDetails = ({ place }) => {
         <Typography variant="h5" gutterBottom>
           {place.name}
         </Typography>
+
         <Box display="flex" justifyContent="space-between">
+          <Rating value={Number(place.rating)} readOnly />
+          <Typography component="legend">
+            out of {place.num_reviews} reviews
+          </Typography>
+        </Box>
+        <Box display="flex" justifyContent="space-between" my={2}>
           <Typography>Price</Typography>
           <Typography>{place.price_level}</Typography>
         </Box>
+
         <Box display="flex" justifyContent="space-between">
           <Typography>Ranking</Typography>
           <Typography>{place.ranking}</Typography>
@@ -71,7 +79,7 @@ const PlaceDetails = ({ place }) => {
             {place.phone}
           </Typography>
         )}
-        {place?.rating && (
+        {/* {place?.rating && (
           <Box display="flex" justifyContent="space-between">
             <Typography>Rating</Typography>
             <Box display="flex" alignItems="center">
@@ -79,7 +87,7 @@ const PlaceDetails = ({ place }) => {
               {place.rating}
             </Box>
           </Box>
-        )}
+        )} */}
       </CardContent>
       {/* website and url are deprecated  */}
       <CardActions>
