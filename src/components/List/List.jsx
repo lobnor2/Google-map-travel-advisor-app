@@ -12,30 +12,11 @@ import useStyles from "./styles";
 import { useState } from "react";
 import PlaceDetails from "../PlaceDetails/PlaceDetails";
 
-const List = () => {
+const List = ({ places }) => {
   const classes = useStyles();
   const [type, setType] = useState("restaurants");
   const [rating, setRating] = useState("0");
-  const places = [
-    {
-      name: "cool",
-    },
-    {
-      name: "best place",
-    },
-    {
-      name: "best gym",
-    },
-    {
-      name: "cool",
-    },
-    {
-      name: "best place",
-    },
-    {
-      name: "best gym",
-    },
-  ];
+
   return (
     <div className={classes.container}>
       <Typography variant="h4">

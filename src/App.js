@@ -10,7 +10,7 @@ import { CssBaseline, Grid } from "@material-ui/core";
 function App() {
   const [places, setPlaces] = useState([]);
   const [coordinates, setCoordinates] = useState({});
-  const [bounds, setBounds] = useState(null);
+  const [bounds, setBounds] = useState({});
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -21,9 +21,11 @@ function App() {
   }, []);
 
   useEffect(() => {
-    getPlacesData().then((data) => {
-      setPlaces(data);
-    });
+    if (bounds) {
+      getPlacesData(bounds.sw, bounds.ne).then((data) => {
+        setPlaces(data);
+      });
+    }
   }, [coordinates, bounds]);
 
   return (
@@ -41,7 +43,7 @@ function App() {
         }}
       >
         <Grid item xs={12} md={4} style={{ border: "1px solid green" }}>
-          <List />
+          <List places={places} />
         </Grid>
         {/* take full 12 on small devices and 8 spaces for medium and larger devices */}
         <Grid item xs={12} md={8} style={{ border: "1px solid green" }}>
