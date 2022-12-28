@@ -14,10 +14,13 @@ import PhoneIcon from "@material-ui/icons/Phone";
 import Rating from "@material-ui/lab/Rating";
 import useStyles from "./styles.js";
 
-const PlaceDetails = ({ place }) => {
+const PlaceDetails = ({ place, selected, refProp }) => {
   const classes = useStyles();
   console.log(place);
   // console.log("place details");
+
+  if (selected)
+    refProp?.current?.scrollIntoView({ behaviour: "smooth", block: "start" });
   return (
     <Card elevation={6}>
       <CardMedia
