@@ -35,7 +35,7 @@ function App() {
     if (bounds) {
       setIsLoading(true);
       getPlacesData(type, bounds.sw, bounds.ne).then((data) => {
-        setPlaces(data);
+        setPlaces(data?.filter((place) => place.name && place.num_reviews > 0));
         setIsLoading(false);
         setFilteredPlaces([]);
       });
