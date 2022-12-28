@@ -12,10 +12,17 @@ import useStyles from "./styles";
 import { useState } from "react";
 import PlaceDetails from "../PlaceDetails/PlaceDetails";
 
-const List = ({ places, childClicked, isLoading }) => {
+const List = ({
+  places,
+  childClicked,
+  isLoading,
+  rating,
+  setRating,
+  type,
+  setType,
+}) => {
   const classes = useStyles();
-  const [type, setType] = useState("restaurants");
-  const [rating, setRating] = useState("0");
+
   const [elRefs, setElRefs] = useState([]);
 
   useEffect(() => {

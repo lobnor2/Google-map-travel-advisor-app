@@ -20,7 +20,7 @@ const PlaceDetails = ({ place, selected, refProp }) => {
   // console.log("place details");
 
   if (selected)
-    refProp?.current?.scrollIntoView({ behaviour: "smooth", block: "start" });
+    refProp?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   return (
     <Card elevation={6}>
       <CardMedia
@@ -38,17 +38,18 @@ const PlaceDetails = ({ place, selected, refProp }) => {
         </Typography>
 
         <Box display="flex" justifyContent="space-between">
-          <Rating value={Number(place.rating)} readOnly />
+          <Rating value={Number(place.rating)} readOnly precision={0.5} />
+          {/* {place.rating} */}
           <Typography component="legend">
             out of {place.num_reviews} reviews
           </Typography>
         </Box>
-        <Box display="flex" justifyContent="space-between" my={2}>
+        <Box display="flex" justifyContent="space-between">
           <Typography>Price</Typography>
           <Typography>{place.price_level}</Typography>
         </Box>
 
-        <Box display="flex" justifyContent="space-between">
+        <Box display="flex" justifyContent="space-between" my={1}>
           <Typography>Ranking</Typography>
           <Typography>{place.ranking}</Typography>
         </Box>
@@ -70,14 +71,21 @@ const PlaceDetails = ({ place, selected, refProp }) => {
           <Chip key={name} label={name} size="small" className={classes.chip} />
         ))}
         {place?.address && (
-          <Typography guterBottom color="textSecondary">
-            {" "}
+          <Typography
+            guterBottom
+            color="textSecondary"
+            className={classes.subtitle}
+          >
             <LocationOnIcon />
             {place.address}
           </Typography>
         )}
         {place?.phone && (
-          <Typography>
+          <Typography
+            guterBottom
+            color="textSecondary"
+            className={classes.spacing}
+          >
             <PhoneIcon />
             {place.phone}
           </Typography>
