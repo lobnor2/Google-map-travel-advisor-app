@@ -45,7 +45,7 @@ function App() {
   return (
     <>
       <CssBaseline />
-      <Header />
+      <Header setCoordinates={setCoordinates} />
       {/* take full 12 on small devices and 4 on medium and larger devices */}
       <Grid
         container
